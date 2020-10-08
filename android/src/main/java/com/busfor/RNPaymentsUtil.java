@@ -13,9 +13,9 @@ import java.util.ArrayList;
 
 import com.facebook.react.bridge.ReadableMap;
 
-public class PaymentsUtil {
+public class RNPaymentsUtil {
 
-  private PaymentsUtil() {
+  private RNPaymentsUtil() {
   }
 
   private static JSONObject getBaseRequest() throws JSONException {
