@@ -97,7 +97,7 @@ public class RNGooglePayModule extends ReactContextBaseJavaModule {
     if (activity == null) {
       return;
     }
-    mPaymentsClient = PaymentsUtil.createPaymentsClient(environment, activity);
+    mPaymentsClient = RNPaymentsUtil.createPaymentsClient(environment, activity);
   }
 
   @ReactMethod
@@ -108,7 +108,7 @@ public class RNGooglePayModule extends ReactContextBaseJavaModule {
       promise.resolve(false);
       return;
     }
-    final JSONObject isReadyToPayJson = PaymentsUtil.getIsReadyToPayRequest(allowedCardNetworks.toArrayList(), allowedCardAuthMethods.toArrayList());
+    final JSONObject isReadyToPayJson = RNPaymentsUtil.getIsReadyToPayRequest(allowedCardNetworks.toArrayList(), allowedCardAuthMethods.toArrayList());
     if (isReadyToPayJson == null) {
       Log.w(TAG, "[GooglePay] isReadyToPayJson == null");
       promise.resolve(false);
