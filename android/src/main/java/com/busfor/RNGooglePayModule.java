@@ -151,7 +151,7 @@ public class RNGooglePayModule extends ReactContextBaseJavaModule {
       promise.reject("NO_ACTIVITY", "activity is null");
       return;
     }
-    JSONObject paymentDataRequestJson = PaymentsUtil.getPaymentDataRequest(requestData);
+    JSONObject paymentDataRequestJson = RNPaymentsUtil.getPaymentDataRequest(requestData);
     if (paymentDataRequestJson == null) {
       promise.reject("PAYMENT_DATA_REQUEST_JSON", "paymentDataRequestJson is null");
       return;
