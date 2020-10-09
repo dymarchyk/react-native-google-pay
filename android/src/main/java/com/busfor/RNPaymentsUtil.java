@@ -100,11 +100,11 @@ public class RNPaymentsUtil {
 
   public static JSONObject getPaymentDataRequest(ReadableMap requestData) {
     try {
-      JSONObject paymentDataRequest = PaymentsUtil.getBaseRequest();
+      JSONObject paymentDataRequest = RNPaymentsUtil.getBaseRequest();
       paymentDataRequest.put(
-          "allowedPaymentMethods", new JSONArray().put(PaymentsUtil.getCardPaymentMethod(requestData.getMap("cardPaymentMethod"))));
-      paymentDataRequest.put("transactionInfo", PaymentsUtil.getTransactionInfo(requestData.getMap("transaction")));
-      paymentDataRequest.put("merchantInfo", PaymentsUtil.getMerchantInfo(requestData.getString("merchantName")));
+          "allowedPaymentMethods", new JSONArray().put(RNPaymentsUtil.getCardPaymentMethod(requestData.getMap("cardPaymentMethod"))));
+      paymentDataRequest.put("transactionInfo", RNPaymentsUtil.getTransactionInfo(requestData.getMap("transaction")));
+      paymentDataRequest.put("merchantInfo", RNPaymentsUtil.getMerchantInfo(requestData.getString("merchantName")));
 
       return paymentDataRequest;
     } catch (JSONException e) {
